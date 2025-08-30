@@ -1,0 +1,267 @@
+/* Сброс */
+* {
+    transition: background 0.5s, color 0.5s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* --- Темы --- */
+body.light {
+  background: #fdfaf7;
+  color: #000;
+}
+
+body.dark {
+  background: #111;
+  color: #fff;
+}
+
+/* Верхняя панель */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+body.light .top-bar {
+  background: #e9dcd4;
+}
+
+body.dark .top-bar {
+  background: #3a1d55;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic, .alya-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: -10px;
+  border: 2px solid #fff;
+}
+
+.theme-btn {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+body.light .theme-btn {
+  background: #f5e6c7;
+  color: #000;
+}
+body.light .theme-btn:hover {
+  background: #f0dcb8;
+}
+
+body.dark .theme-btn {
+  background: #222;
+  color: #fff;
+}
+body.dark .theme-btn:hover {
+  background: #444;
+}
+
+/* Основной блок */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.left {
+  flex: 1;
+  text-align: center;
+}
+
+.logo {
+  max-width: 400px;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Нижние кнопки */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light .btn {
+  background: #e9dcd4;
+  color: #000;
+}
+body.light .btn:hover {
+  background: #d5c6bc;
+}
+
+body.dark .btn {
+  background: #4b1fa5;
+  color: #fff;
+}
+body.dark .btn:hover {
+  background: #6527c9;
+}
+.main-img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 1400px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+body.dark .modal-content {
+  background: #2c1a3a;
+  color: #fff;
+}
+
+.close-btn {
+  margin-top: 20px;
+  background: #d5c6bc;
+}
+
+body.dark .close-btn {
+  background: #6527c9;
+}
+.character-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.quote-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #1a0033;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  color: white;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.character-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.character-card {
+  text-align: center;
+}
+
+.character-card img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.character-card button {
+  margin-top: 10px;
+  background-color: #4b0077;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bio-text {
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+.character-card img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}

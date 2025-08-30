@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alya Sometimes Hides Her Feelings in Russian</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <!-- Верхняя панель -->
+  <header class="top-bar">
+    <div class="profile">
+      <img src="091984de-89dc-4542-b61f-116fd062f836.png" alt="profile" class="profile-pic">
+    </div>
+    <div class="title">
+    Wikipedia
+  </div>
+    <button class="theme-btn" id="themeToggle">dark theme</button>
+  </header>
+    <div class="right" style="overflow: auto hidden;">
+      <!-- Сюда вставь картинку из аниме -->
+      <img src="image.png" alt="Alya and friends" id="mainImage" style="width: 60rem;">
+    </div>
+  </main>
+
+  <!-- Нижние кнопки -->
+  <footer class="bottom-buttons">
+  <button class="btn" id="animeBtn">anime creation</button>
+  <button class="btn" id="quotesBtn">Quotes About Characters</button>
+  <button class="btn" id="charactersBtn">anime characters</button>
+</footer>
+
+
+
+  </footer>
+
+  <!-- Скрипт для смены темы -->
+
+   <!-- Модальное окно -->
+<div id="modalOverlay" class="modal-overlay" style="display: none;">
+  <div class="modal-content" style="position: relative; display: flex;">
+    <img src="image3.jpg" alt="" style="float: left;"  >
+    <p style="float: right ;"> Tokidoki Bosotto Roshia-go de Dereru Tonari no Alya-san (Japanese: 時々ボソッとロシア語でデレる隣のアーリャさん Tokidoki bosotto roshia-go de dereru tonari no A:rya-san, "Sometimes Alya Suddenly Flirts in Russian"[a]), also briefly RoshiDere (Japanese: ロシデレ Rosidere)[3] is a light novel by a Japanese writer under the pseudonym Sansan SUN (Japanese: 燦々SUN), illustrated by Momoko. After noticing the stories on the Shosetsuka ni Naro website, Kadokawa Shoten began publishing a reworked long story, with 10 volumes released as of September 2024. The story was adapted into an anime series by Doga Kobo, which aired from July to September 2024. A second season was announced in September 2024[4], with a planned premiere in 2026.On March 17, 2023, Kadokawa announced an anime adaptation of the light novel and posted two trailers online: "Russian" and "Japanese" (with Japanese subtitles). Sumire Uesaka and Kohei Amasaki will retain their roles as Ali and Masachika, respectively. On September 24, a poster and a video with a new 3D model of Ali were released, and the creators of the anime and new seiyuu were revealed. The series is being directed by Ryota Ito at Doga Kobo, with Yuhei Murota appointed as the character designer. The broadcast was originally scheduled for April 2024, but was later postponed to July of the same year. The anime series aired from July 3 to September 18, 2024 on Tokyo MX, BS NTV, and other TV channels. The opening theme of the anime series is "Ichiban Kagayaku Hoshi" (Japanese: 1番輝く星 Ichiban Kagayaku Hoshi, "Brightest Star"), performed by Sumire Uesaka on behalf of her character; the closing theme songs are Uesaka's covers of various songs (episodes 1-11), as well as an original song (episode 12).
+Outside Asia, the anime series is licensed by the streaming service Crunchyroll, in several Asian countries by Ani-One Asia, and in Russia by DEEP, and is broadcast on the Kinopoisk and IVI services.
+On September 18, 2024, the day the twelfth episode was shown, a second season was announced. Its director is Hiroshi Haraguchi, the screenwriter is Yuka Yamada, and the character designer is Yuhei Murota again. The premiere is scheduled for 2026.</p>
+ 
+    <button id="closeModal" class="btn close-btn">Close</button>
+  </div>
+</div>
+
+<!-- Модальное окно для цитат -->
+<div id="quotesModal" class="modal-overlay" style="display: none;">
+  <div class="modal-content">
+    <h2>Quotes About Characters</h2>
+
+    <div class="quote-block">
+      <img src="image4.jpg" alt="Alya" class="character-img">
+      <p><strong>Alya:</strong> "I don't like you at all... idiot."</p>
+    </div>
+
+    <div class="quote-block">
+      <img src="image5.webp" alt="Masachika" class="character-img">
+      <p><strong>Masachika:</strong> "Sometimes she speaks Russian and I don't understand, but it sounds beautiful."</p>
+    </div>
+
+    <div class="quote-block">
+      <img src="image6.webp" alt="Yuki" class="character-img">
+      <p><strong>Yuki:</strong> "Alya is a mystery that no one can solve."</p>
+    </div>
+
+    <div class="quote-block">
+      <img src="image7.jpg" alt="Maria" class="character-img">
+      <p><strong>Maria:</strong> "She is cold on the outside, but I know she is kind on the inside."</p>
+    </div>
+
+    <button id="closeQuotes" class="btn close-btn">Close</button>
+  </div>
+</div>
+
+<!-- Модальное окно персонажей -->
+<div id="charactersModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <div class="character-grid">
+      <div class="character-card">
+        <img src="image8.jpg" alt="Yuki">
+        <button onclick="showBio('Yuki')">Yuki</button>
+      </div>
+      <div class="character-card">
+        <img src="image12.jpg" alt="Alya">
+        <button onclick="showBio('Alya')">Alya</button>
+      </div>
+      <div class="character-card">
+        <img src="image10.jpeg" alt="Masha">
+        <button onclick="showBio('Masha')">Masha</button>
+      </div>
+      <div class="character-card">
+        <img src="image11.jpg" alt="Masachika">
+        <button onclick="showBio('Masachika')">Masachika</button>
+      </div>
+    </div>
+
+    <div id="bioText" class="bio-text"></div>
+  </div>
+</div>
+
+   <script>
+    const body = document.body;
+    const themeBtn = document.getElementById("themeToggle");
+    const mainImage = document.getElementById("mainImage");
+
+    themeBtn.addEventListener("click", () => {
+      if (body.classList.contains("light")) {
+        // переключаем на тёмную
+        body.classList.remove("light");
+        body.classList.add("dark");
+        themeBtn.textContent = "light theme";
+        mainImage.src = "./image2.png"; 
+      } else {
+        // переключаем на светлую
+        body.classList.remove("dark");
+        body.classList.add("light");
+        themeBtn.textContent = "dark theme";
+        mainImage.src = "./image.png"; 
+      }
+    });
+    const modalOverlay = document.getElementById("modalOverlay");
+    const animeBtn = document.getElementById("animeBtn");
+const closeModal = document.getElementById("closeModal");
+
+animeBtn.addEventListener("click", () => {
+  modalOverlay.style.display = "flex";
+});
+
+closeModal.addEventListener("click", () => {
+  modalOverlay.style.display = "none";
+});
+
+const quotesBtn = document.querySelectorAll(".btn")[1]; // Вторая кнопка
+const quotesModal = document.getElementById("quotesModal");
+const closeQuotes = document.getElementById("closeQuotes");
+
+quotesBtn.addEventListener("click", () => {
+  quotesModal.style.display = "flex";
+});
+
+closeQuotes.addEventListener("click", () => {
+  quotesModal.style.display = "none";
+});
+
+// 👥 Модальное окно "anime characters"
+const charactersModal = document.getElementById("charactersModal");
+const charactersBtn = document.getElementById("charactersBtn");
+const closeCharacters = charactersModal.querySelector(".close");
+
+charactersBtn.addEventListener("click", () => {
+  charactersModal.style.display = "block";
+});
+closeCharacters.addEventListener("click", () => {
+  charactersModal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === charactersModal) {
+    charactersModal.style.display = "none";
+  }
+});
+
+// 📖 Биографии персонажей
+function showBio(name) {
+  const bios = {
+    Yuki: "Yuki — Age & Appearance: 15 years old, black hair, violet eyes, around 150 cm tall. Role & Family: Comes from a former noble diplomatic family, works in the student council as public relations officer, also runs for president. Otaku Side: Secretly a huge otaku — she stores her manga and light novels at Masachika’s house. Family Secret: She is actually Masachika’s younger sister. They keep this secret because Masachika renounced the Suo family name after a fallout with his mother.Relationship with Alisa: Starts as a rival for the presidency, but later becomes a friend. She even teases Alisa and subtly supports her relationship with Masachika.",
+    Alya: "Alya — Age: Around 15–16, birthday November 7. Appearance & Personality: Silver hair, blue eyes, very beautiful and intelligent, but distant and cold at first. School & Role: First-year at Seirei Academy, treasurer of the student council, runs for the position of president. Background: Daughter of a Russian father and Japanese mother, lived part of her life in Vladivostok, struggled with friendships due to her foreign background. Relationship with Masachika: Initially dismissive of him, but gradually warmed up after he supported her during the school festival. She begins to flirt with him in Russian, not realizing he understands her words.",
+    Masha: "Masha — Age & Appearance: 16 years old, light brown hair, brown eyes, about 160 cm tall.Role: Alisa’s older sister, secretary of the student council. Personality: Plays the role of a cheerful and slightly silly girl, but in reality she is smart, reliable, and deeply cares for Alisa.",
+    Masachika: "Masachika — Age & Appearance: 16 years old, about 173 cm tall, Aries, birthday April 9. Personality: Laid-back, lazy, and an otaku, but has a sharp understanding of people. He surprisingly knows Russian and understands all of Alisa’s teasing remarks. Background: Learned Russian thanks to his grandfather (who loved Russian culture) and a childhood friend who also taught him. Family Circumstances: After clashing with his mother, he abandoned the Suo family name and chose to live with his grandfather. Despite this, he still shares a hidden bond with Yuki."
+  };
+  const bioText = document.getElementById("bioText");
+  bioText.textContent = bios[name] || "Биография не найдена.";
+}
+
+
+
+
+  </script>
+</body>
+</html>
